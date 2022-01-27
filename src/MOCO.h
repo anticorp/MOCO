@@ -1,7 +1,7 @@
 /*
  Name:		MOCO.h
  Created:	6/12/2021 2:58:42 PM
- Author:	Robert
+ Author:	Robert Hoople
  Editor:	http://www.visualmicro.com
 */
 
@@ -13,16 +13,14 @@
 	#else
 		#include "WProgram.h"
 	#endif
-#include "DRIVE/CharacterProfile.h"
 
 	#define MoCo_TxRx_REGISTER_SIZE 4
 	#define MoCo_DevID_REGISTER_SIZE 8
 
 #include "SettingStruct.h"
-#include "ControlPanelInterface.h"
-#include "DRIVE/CommandCodeClass.h"
-#include "ProfileObject.h"
-//#include "DRIVE/ProfilerConfigItem.h"
+#include <ControlPanelInterface.h>
+#include <ProfileObject.h>
+#include <DriveSharedResources.h>
 #include "AddressHelper.h"
 
 namespace moco
@@ -178,7 +176,7 @@ namespace moco
 			class SMC_G2_18v5__ : public _::MOCO
 			{
 			public:
-				SMC_G2_18v5__();
+				SMC_G2_18v5__() {}
 				/*		This Constructor is to simplify setup of chained Devices *AFTER* First is set up.
 					If Constructed out of order, Initialization will fail. */
 				SMC_G2_18v5__(UARTClass& serialChannel, uint8_t devID, LIMITSETTINGS& limitSettings, const char* name);

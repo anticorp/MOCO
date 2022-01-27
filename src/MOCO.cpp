@@ -5,6 +5,8 @@
  Editor:	http://www.visualmicro.com
 */
 
+/* Motor Controller Library main code file */
+
 #include <ADM.h>
 #include "MOCO.h"
 
